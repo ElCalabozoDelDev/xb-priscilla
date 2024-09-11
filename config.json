@@ -1,0 +1,10 @@
+{
+  "server": {
+    "port": 18080,
+    "threads": 12
+  },
+  "logging": {
+    "level": "info",
+    "file": "logs/server.log"
+  }
+}
