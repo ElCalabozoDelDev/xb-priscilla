@@ -8,7 +8,7 @@ set(CMAKE_CXX_COMPILER "clang++")
 set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/build/vcpkg_installed/x64-windows/share")
 
 # Nombre del proyecto
-project(LabResultRetrieverApi VERSION 1.0 LANGUAGES CXX)
+project(xb-priscilla VERSION 1.0 LANGUAGES CXX)
 
 # Configuración de CMake
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -18,7 +18,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Recursivamente busca todos los archivos .cpp dentro del directorio src/
-file(GLOB_RECURSE SOURCES api/src/*.cpp)
+file(GLOB_RECURSE SOURCES app/src/*.cpp)
 
 # Crea el ejecutable en la carpeta _bin
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
@@ -45,7 +45,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC nlohmann_json::nlohmann_json)
 
 # Configura los directorios de inclusión
 target_include_directories(${PROJECT_NAME} PRIVATE 
-    ${CMAKE_SOURCE_DIR}/api/include
+    ${CMAKE_SOURCE_DIR}/app/include
 )
 
 # Comando personalizado para copiar config.json al directorio del ejecutable
